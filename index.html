@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Primita 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #b3124a;
+  background: linear-gradient(135deg, #ffd6e6 0%, #ffe9f1 30%, #fff0f5 60%, #ffffff 100%);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3.5rem, 12vw, 9rem);
+  color: #c2185b;
+  text-shadow: 0 4px 14px rgba(194,24,91,0.3), 0 0 40px rgba(255,182,193,0.4);
+  margin-bottom: 0.4rem;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+@keyframes titleGlow {
+  0%, 100% { text-shadow: 0 4px 14px rgba(194,24,91,0.3), 0 0 40px rgba(255,182,193,0.4); }
+  50% { text-shadow: 0 4px 20px rgba(194,24,91,0.5), 0 0 60px rgba(255,182,193,0.6); }
+}
+.subtitle {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 2.2rem;
+  color: #b3124a;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.buttons {
+  position: relative;
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  min-height: 80px;
+}
+button {
+  padding: 1.1rem 3rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(194,24,91,0.28);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.8), box-shadow 0.3s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  position: relative;
+  overflow: hidden;
+}
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+button:active::before {
+  width: 300px;
+  height: 300px;
+}
+#yesBtn {
+  background: linear-gradient(135deg, #ff85b3, #ffb3d1, #ffd6e6);
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  animation: yesGlow 2s ease-in-out infinite;
+}
+@keyframes yesGlow {
+  0%, 100% { box-shadow: 0 10px 24px rgba(255,133,179,0.4), 0 0 20px rgba(255,133,179,0.2); }
+  50% { box-shadow: 0 10px 30px rgba(255,133,179,0.6), 0 0 40px rgba(255,133,179,0.4); }
+}
+#yesBtn.pulse {
+  animation: pulse 1s infinite, yesGlow 2s ease-in-out infinite;
+}
+#noBtn {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,230,239,0.8));
+  color: #c2185b;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 5;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#noBtn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  animation: shake 0.5s;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.14); }
+}
+.punchline {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  color: #b3124a;
+  opacity: 0.92;
+  margin-bottom: 2rem;
+  min-height: 3rem;
+  animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 0.92; transform: translateY(0); }
+}
+.punchline.final-message {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #d81b60;
+  font-weight: 700;
+  animation: finalPulse 1.5s ease-in-out infinite;
+}
+@keyframes finalPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.credit {
+  font-size: 1.1rem;
+  color: #c77a96;
+  margin-top: 1.5rem;
+}
+.heart, .sparkle {
+  position: absolute;
+  bottom: -10%;
+  font-size: 1.8rem;
+  opacity: 0;
+  pointer-events: none;
+  animation: floatUp linear infinite;
+}
+.sparkle { font-size: 1.4rem; }
+@keyframes floatUp {
+  from { transform: translateY(0) rotate(0); opacity: 0; }
+  10%  { opacity: 0.8; }
+  to   { transform: translateY(-130vh) rotate(720deg); opacity: 0; }
+}
+.shake {
+  animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes shake {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(4px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+  40%, 60% { transform: translate3d(6px, 0, 0); }
+}
+/* Floating background hearts */
+.bg-heart {
+  position: fixed;
+  font-size: 2rem;
+  opacity: 0.15;
+  animation: bgFloat 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes bgFloat {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  100% { transform: translateY(-100vh) rotate(360deg); }
+}
+/* Confetti */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  animation: confettiFall 3s linear;
+  pointer-events: none;
+  z-index: 100;
+}
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+@media (max-width: 500px) {
+  .buttons { gap: 1.2rem; }
+  button { font-size: 1.35rem; padding: 0.9rem 2.4rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>Primita</h1>
+<div class="subtitle">Will you be my Valentine? ♡</div>
+
+<div class="buttons">
+  <button id="yesBtn">Yes 💖</button>
+  <button id="noBtn">No 😔</button>
+</div>
+
+<div class="punchline" id="punchline">
+  Choose wisely… my heart is watching 👀💗
+</div>
+
+<div class="credit">Made with 💕 by John</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const punchline = document.getElementById("punchline");
+const buttonsContainer = document.querySelector('.buttons');
+
+const messages = [
+  "Hey—why you running? 😳",
+  "That button fears commitment 🤍",
+  "Wrong choice detected 🌸",
+  "Plot twist: Yes is the only option 😌",
+  "Come on… you know you want to 💕",
+  "That No looks nervous 👀",
+  "Even the universe says YES ✨",
+  "My heart just skipped… and chased you 💓",
+  "Okay this is getting personal 😤",
+  "Fine. But Yes is waiting 😏"
+];
+
+let count = 0;
+const maxAttempts = 10;
+
+// Create floating background hearts
+function createBgHearts() {
+  const hearts = ['💕', '💖', '💗', '💓', '💝', '💞'];
+  for (let i = 0; i < 15; i++) {
+    setTimeout(() => {
+      const heart = document.createElement('div');
+      heart.className = 'bg-heart';
+      heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (15 + Math.random() * 15) + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }, i * 200);
+  }
+}
+
+// Create confetti burst
+function createConfetti(x, y) {
+  const colors = ['#ff85b3', '#ffb3d1', '#ffd6e6', '#c2185b', '#d81b60', '#f48fb1'];
+  for (let i = 0; i < 30; i++) {
+    setTimeout(() => {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = x + 'px';
+      confetti.style.top = y + 'px';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDelay = Math.random() * 0.3 + 's';
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 3000);
+    }, i * 20);
+  }
+}
+
+// Elements to avoid overlapping with
+const avoidElements = [
+  yesBtn, 
+  document.querySelector('h1'), 
+  document.querySelector('.subtitle'), 
+  punchline,
+  document.querySelector('.credit')
+];
+
+// Check if two rectangles overlap
+function isOverlapping(rect1, rect2, padding = 30) {
+  return !(
+    rect1.right + padding < rect2.left ||
+    rect1.left - padding > rect2.right ||
+    rect1.bottom + padding < rect2.top ||
+    rect1.top - padding > rect2.bottom
+  );
+}
+
+// Find a safe position for the No button
+function findSafePosition() {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const btnWidth = noBtn.offsetWidth;
+  const btnHeight = noBtn.offsetHeight;
+  
+  const padding = 20;
+  const maxX = vw - btnWidth - padding;
+  const maxY = vh - btnHeight - padding;
+  
+  let x, y;
+  let attempts = 0;
+  let foundSafe = false;
+  
+  while (!foundSafe && attempts < 100) {
+    x = padding + Math.random() * (maxX - padding);
+    y = padding + Math.random() * (maxY - padding);
+    
+    const testRect = {
+      left: x,
+      top: y,
+      right: x + btnWidth,
+      bottom: y + btnHeight
+    };
+    
+    let hasOverlap = false;
+    for (let el of avoidElements) {
+      const elRect = el.getBoundingClientRect();
+      if (isOverlapping(testRect, elRect)) {
+        hasOverlap = true;
+        break;
+      }
+    }
+    
+    if (!hasOverlap) {
+      foundSafe = true;
+    }
+    
+    attempts++;
+  }
+  
+  return { x, y };
+}
+
+// Move "No" button to random safe position
+function moveNoButton() {
+  count++;
+  
+  // After 10 attempts, disable No button and show final message
+  if (count >= maxAttempts) {
+    noBtn.classList.add('disabled');
+    noBtn.style.pointerEvents = 'none';
+    punchline.className = 'punchline final-message';
+    punchline.textContent = "Nice try! 😏 But 'No' is not an option here... Only YES! 💖✨";
+    
+    // Extra sparkle on Yes button
+    yesBtn.style.transform = 'scale(2)';
+    yesBtn.classList.add('pulse');
+    
+    // Create confetti around the screen
+    for (let i = 0; i < 5; i++) {
+      setTimeout(() => {
+        createConfetti(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
+      }, i * 200);
+    }
+    return;
+  }
+  
+  // Make button fixed positioned on first click
+  if (count === 1) {
+    const rect = noBtn.getBoundingClientRect();
+    noBtn.style.position = 'fixed';
+    noBtn.style.left = rect.left + 'px';
+    noBtn.style.top = rect.top + 'px';
+    noBtn.style.margin = '0';
+  }
+  
+  setTimeout(() => {
+    const { x, y } = findSafePosition();
+    
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+    
+    if (count > 5) {
+      const rotation = (Math.random() - 0.5) * 20;
+      noBtn.style.transform = `rotate(${rotation}deg)`;
+    } else {
+      noBtn.style.transform = 'rotate(0deg)';
+    }
+
+    punchline.textContent = messages[Math.min(count - 1, messages.length - 1)];
+
+    const scale = Math.min(1 + count * 0.12, 2.8);
+    yesBtn.style.transform = `scale(${scale})`;
+    yesBtn.classList.add('pulse');
+    
+    // Add little sparkles on each No click
+    if (count % 2 === 0) {
+      createConfetti(x + noBtn.offsetWidth / 2, y);
+    }
+  }, 10);
+}
+
+// Trigger Yes animation
+function triggerYes() {
+  punchline.className = 'punchline final-message';
+  punchline.textContent = "YESSS! 🎉 You made my day! 💍💖✨";
+  noBtn.style.pointerEvents = 'none';
+  noBtn.style.opacity = '0';
+  noBtn.style.transform = 'scale(0)';
+  
+  yesBtn.style.transform = 'scale(1.3)';
+  
+  // Massive confetti celebration
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      createConfetti(Math.random() * window.innerWidth, -50);
+    }, i * 100);
+  }
+
+  // Heart rain
+  const heartEmojis = ['💖', '💕', '💗', '💓', '💝', '💞', '♡', '❤️'];
+  for (let i = 0; i < 80; i++) {
+    setTimeout(() => {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+      h.style.left = Math.random() * 100 + 'vw';
+      h.style.fontSize = (1.5 + Math.random() * 1.5) + 'rem';
+      h.style.animationDuration = (6 + Math.random() * 8) + 's';
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 20000);
+    }, i * 60);
+  }
+}
+
+// Event listeners
+noBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (!noBtn.classList.contains('disabled')) {
+    moveNoButton();
+  }
+});
+
+yesBtn.addEventListener('click', () => {
+  triggerYes();
+});
+
+// Initialize
+createBgHearts();
+</script>
+</body>
+</html>
